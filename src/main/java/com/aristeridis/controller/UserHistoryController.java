@@ -8,8 +8,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/history")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserHistoryController {
+        
     private final UserHistoryService service;
 
     public UserHistoryController(UserHistoryService service) {
