@@ -30,31 +30,74 @@ public class UserHistory {
     @JsonProperty("comment")
     private String comment;
 
+    @JsonProperty("category")
+    private String category;
+
     public UserHistory() {}
 
-    public UserHistory(Long userId, Long landmarkId, String visitDate, Double rating, String comment) {
+    public UserHistory(Long id, Long userId, Long landmarkId, String visitDate, Double rating, String comment, String category) {
+        this.id = id;
         this.userId = userId;
         this.landmarkId = landmarkId;
         this.visitDate = visitDate;
         this.rating = rating;
         this.comment = comment;
+        this.category = category;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Long getUserId() { return userId; }
-    public void setUserId(Long userId) { this.userId = userId; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Long getLandmarkId() { return landmarkId; }
-    public void setLandmarkId(Long landmarkId) { this.landmarkId = landmarkId; }
+    public Long getUserId() {
+        return userId;
+    }
 
-    public String getVisitDate() { return visitDate; }
-    public void setVisitDate(String visitDate) { this.visitDate = visitDate; }
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-    public Double getRating() { return rating; }
-    public void setRating(Double rating) { this.rating = rating; }
+    public Long getLandmarkId() {
+        return landmarkId;
+    }
 
-    public String getComment() { return comment; }
-    public void setComment(String comment) { this.comment = comment; }
+    public void setLandmarkId(Long landmarkId) {
+        this.landmarkId = landmarkId;
+    }
+
+    public String getVisitDate() {
+        return visitDate;
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
