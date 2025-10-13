@@ -1,5 +1,6 @@
 package com.aristeridis.service;
 
+import com.aristeridis.entity.User;
 import com.aristeridis.entity.UserHistory;
 import com.aristeridis.repository.UserHistoryRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,9 @@ public class UserHistoryService {
 
     public UserHistory save(UserHistory history) {
         return repository.save(history);
+    }
+
+    public UserHistory getOne(Long id) {
+        return repository.findById(id).orElse(null);
     }
 }
