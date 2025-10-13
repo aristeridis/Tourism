@@ -30,4 +30,9 @@ public class UserHistoryController {
 
     @GetMapping("/{id}")
     public UserHistory getOne(@PathVariable Long id) { return service.getOne(id); }
+
+    @GetMapping("/user/{userId}")
+    public List<UserHistory> getHistoryByUser(@PathVariable Long userId) {
+        return service.findByUserId(userId);
+    }
 }

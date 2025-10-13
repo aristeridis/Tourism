@@ -25,4 +25,8 @@ public class UserHistoryService {
     public UserHistory getOne(Long id) {
         return repository.findById(id).orElse(null);
     }
+
+    public List<UserHistory> findByUserId(Long userId) {
+        return repository.findByUserId(userId);
+    }
 }
