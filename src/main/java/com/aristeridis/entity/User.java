@@ -3,6 +3,8 @@ package com.aristeridis.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -27,6 +29,8 @@ public class User {
     private Double averageRating = 0.0;
     @JsonProperty("totalvisits")
     private Integer totalVisits = 0;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Landmark> landmarks;
 
     public User() {
     }
