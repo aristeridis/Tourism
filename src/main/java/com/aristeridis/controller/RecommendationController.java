@@ -16,13 +16,13 @@ public class RecommendationController {
     @Autowired
     private RecommendationService recommendationService;
 
-    @GetMapping("/{userId}")
+    @GetMapping("/user/{userId}")
     public ResponseEntity<List<Landmark>> getRecommendations(@PathVariable Long userId) {
         List<Landmark> recommendations = recommendationService.recommendLandmarksForUser(userId);
         return ResponseEntity.ok(recommendations);
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<List<Landmark>> getLandmarksByUser(@PathVariable Long userId) {
         List<Landmark> landmarks = recommendationService.findByUserId(userId);
         return ResponseEntity.ok(landmarks);
